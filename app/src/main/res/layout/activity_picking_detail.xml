@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.schapp.akbar.logccscan.PickingDetailActivity">
+
+    <LinearLayout android:id="@+id/top_row"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" android:layout_centerHorizontal="true" android:layout_width="wrap_content" android:layout_marginTop="8dip">
+        <LinearLayout  android:layout_height="wrap_content"  android:orientation="horizontal" android:layout_width="fill_parent">
+            <TextView android:layout_height="wrap_content" android:text="Info Loc" android:gravity="right" android:layout_marginRight="10dip" android:layout_width="fill_parent" android:layout_weight="2" android:textColor="#FF000000"></TextView>
+
+            <TextView
+                android:id="@+id/_input_info_scanloc"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:singleLine="true"
+                android:inputType="text"></TextView>
+        </LinearLayout>
+        <LinearLayout  android:layout_height="wrap_content"  android:orientation="horizontal" android:layout_width="fill_parent">
+            <TextView android:layout_height="wrap_content" android:text="Info ID" android:gravity="right" android:layout_marginRight="10dip" android:layout_width="fill_parent" android:layout_weight="2" android:textColor="#FF000000"></TextView>
+
+            <TextView
+                android:id="@+id/_input_info_scanID"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:singleLine="true"
+                android:inputType="text"></TextView>
+        </LinearLayout>
+
+        <LinearLayout  android:layout_height="wrap_content"  android:orientation="horizontal" android:layout_width="fill_parent">
+            <TextView android:layout_height="wrap_content" android:text="Info qty pic" android:gravity="right" android:layout_marginRight="10dip" android:layout_width="fill_parent" android:layout_weight="2" android:textColor="#FF000000"></TextView>
+
+            <TextView
+                android:id="@+id/_input_info_qtytopic"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:singleLine="true"
+                android:inputType="text"></TextView>
+        </LinearLayout>
+        <LinearLayout  android:layout_height="wrap_content"  android:orientation="horizontal" android:layout_width="fill_parent">
+            <TextView android:layout_height="wrap_content" android:text="SKU" android:gravity="right" android:layout_marginRight="10dip" android:layout_width="fill_parent" android:layout_weight="2" android:textColor="#FF000000"></TextView>
+
+            <TextView
+                android:id="@+id/_input_info_sku"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:singleLine="true"
+                android:inputType="text"></TextView>
+        </LinearLayout>
+        <LinearLayout  android:layout_height="wrap_content"  android:orientation="horizontal" android:layout_width="fill_parent">
+            <TextView android:layout_height="wrap_content" android:text="BatchNo" android:gravity="right" android:layout_marginRight="10dip" android:layout_width="fill_parent" android:layout_weight="2" android:textColor="#FF000000"></TextView>
+
+            <TextView
+                android:id="@+id/_input_info_batchno"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:singleLine="true"
+                android:inputType="text"></TextView>
+        </LinearLayout>
+        <LinearLayout  android:layout_height="wrap_content"  android:orientation="horizontal" android:layout_width="fill_parent">
+            <TextView android:layout_height="wrap_content" android:text="Scan Loc" android:gravity="right" android:layout_marginRight="10dip" android:layout_width="fill_parent" android:layout_weight="2" android:textColor="#FF000000"></TextView>
+
+            <EditText
+                android:id="@+id/_input_scanloc"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:singleLine="true"
+                android:inputType="text"></EditText>
+        </LinearLayout>
+
+        <LinearLayout  android:layout_height="wrap_content"  android:orientation="horizontal" android:layout_width="fill_parent">
+            <TextView android:layout_height="wrap_content" android:text="Scan Pid" android:gravity="right" android:layout_marginRight="10dip" android:layout_width="fill_parent" android:layout_weight="2" android:textColor="#FF000000"></TextView>
+
+            <EditText
+                android:id="@+id/_input_scanpid"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:singleLine="true"
+                android:inputType="text"></EditText>
+        </LinearLayout>
+
+
+
+
+
+
+        <LinearLayout  android:layout_height="wrap_content"  android:orientation="horizontal" android:layout_width="fill_parent">
+            <TextView android:layout_height="wrap_content" android:text="Input Qty" android:gravity="right" android:layout_marginRight="10dip" android:layout_width="fill_parent" android:layout_weight="2" android:textColor="#FF000000"></TextView>
+
+            <EditText
+                android:id="@+id/_input_inputqtypick"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:singleLine="true"
+                android:inputType="number"></EditText>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_width="wrap_content" android:layout_below="@+id/top_row" android:layout_centerHorizontal="true" android:layout_marginTop="20dip">
+        <Button android:id="@+id/_BtnSubmitPick" android:layout_width="wrap_content" android:text="Pick" android:layout_height="wrap_content" android:layout_marginRight="10dip"></Button>
+        <Button android:id="@+id/_BtnCancelPick" android:text="Cancel Pick" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginLeft="10dip"></Button>
+    </LinearLayout>
+</RelativeLayout>

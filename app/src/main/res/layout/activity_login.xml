@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.schapp.akbar.logccscan.LoginActivity">
+
+
+    <ImageView
+        android:id="@+id/_imgblur"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/back_dbs_ct" />
+
+    <ImageView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@drawable/rsz_logo_db_schenker_lt"
+
+        android:layout_centerInParent="true"
+        android:layout_marginTop="65dp"
+        android:layout_alignParentTop="true"/>
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="65dp"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#ef1313"
+        android:textSize="50sp" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Login System"
+        android:textColor="#000066"
+        android:textSize="34sp"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=""
+        android:textColor="#000066"
+        android:id="@+id/textView2"
+        android:layout_marginTop="58dp"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/_TxtUsername"
+        android:drawableLeft="@drawable/rsz_ic_account"
+        android:hint="      User Name"
+        android:textColorHint="#38383a"
+        android:textColor="#060049"
+        android:textSize="20sp"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="47dp"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/_TxtPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/_TxtUsername"
+        android:layout_alignStart="@+id/_TxtUsername"
+        android:layout_below="@+id/_TxtUsername"
+        android:drawableLeft="@drawable/rsz_ic_key"
+        android:ems="10"
+        android:hint="      Password"
+        android:inputType="textPassword"
+        android:singleLine="true"
+        android:textColor="#060049"
+        android:textColorHint="#38383a"
+        android:textSize="20sp"
+        android:layout_alignEnd="@+id/_TxtUsername" />
+
+
+
+
+    <ImageButton
+        android:id="@+id/_input_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:layout_marginTop="80dp"
+        android:layout_alignParentTop="false"
+        android:background="@drawable/rsz_settings"
+        />
+
+
+
+</RelativeLayout>

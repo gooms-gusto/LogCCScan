@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.schapp.akbar.logccscan.SettingActivity">
+
+
+
+    <LinearLayout android:id="@+id/top_row"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" android:layout_centerHorizontal="true" android:layout_width="wrap_content" android:layout_marginTop="25dip">
+
+        <LinearLayout  android:layout_height="wrap_content"  android:orientation="horizontal" android:layout_width="fill_parent">
+            <TextView android:layout_height="wrap_content" android:text="Server Name/IP" android:textSize="11dp" android:gravity="right" android:layout_marginRight="10dip" android:layout_width="fill_parent" android:layout_weight="2" android:textColor="#FF000000"></TextView>
+
+            <EditText
+                android:id="@+id/_input_server"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:singleLine="true"
+                android:inputType="text"></EditText>
+
+        </LinearLayout>
+        <LinearLayout  android:layout_height="wrap_content"  android:orientation="horizontal" android:layout_width="fill_parent">
+            <TextView android:layout_height="wrap_content" android:text="DB Name" android:textSize="11dp" android:gravity="right" android:layout_marginRight="10dip" android:layout_width="fill_parent" android:layout_weight="2" android:textColor="#FF000000"></TextView>
+
+            <EditText
+                android:id="@+id/_input_dbname"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:singleLine="true"
+                android:inputType="text"></EditText>
+        </LinearLayout>
+        <LinearLayout  android:layout_height="wrap_content"  android:orientation="horizontal" android:layout_width="fill_parent">
+            <TextView android:layout_height="wrap_content" android:text="DB User" android:textSize="11dp" android:gravity="right" android:layout_marginRight="10dip" android:layout_width="fill_parent" android:layout_weight="2" android:textColor="#FF000000"></TextView>
+
+            <EditText
+                android:id="@+id/_input_userdb"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:singleLine="true"
+                android:inputType="text"></EditText>
+        </LinearLayout>
+
+        <LinearLayout  android:layout_height="wrap_content"  android:orientation="horizontal" android:layout_width="fill_parent">
+            <TextView android:layout_height="wrap_content" android:text="DB Password" android:textSize="11dp" android:gravity="right" android:layout_marginRight="10dip" android:layout_width="fill_parent" android:layout_weight="2" android:textColor="#FF000000"></TextView>
+
+            <EditText
+                android:id="@+id/_input_passworddb"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:singleLine="true"
+                android:inputType="text"></EditText>
+        </LinearLayout>
+
+        <LinearLayout  android:layout_height="wrap_content"  android:orientation="horizontal" android:layout_width="fill_parent">
+            <TextView android:layout_height="wrap_content" android:text="StorerKey" android:textSize="11dp" android:gravity="right" android:layout_marginRight="10dip" android:layout_width="fill_parent" android:layout_weight="2" android:textColor="#FF000000"></TextView>
+
+            <EditText
+                android:id="@+id/_input_storerkey"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:singleLine="true"
+                android:inputType="textCapCharacters"></EditText>
+        </LinearLayout>
+
+        <LinearLayout  android:layout_height="wrap_content"  android:orientation="horizontal" android:layout_width="fill_parent">
+            <TextView android:layout_height="wrap_content" android:text="Api Server+port" android:textSize="11dp" android:gravity="right" android:layout_marginRight="10dip" android:layout_width="fill_parent" android:layout_weight="2" android:textColor="#FF000000"></TextView>
+
+            <EditText
+                android:id="@+id/_input_ApiServer"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:singleLine="true"
+                android:inputType="text"></EditText>
+        </LinearLayout>
+
+
+
+
+
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_width="wrap_content" android:layout_below="@+id/top_row" android:layout_centerHorizontal="true" android:layout_marginTop="20dip">
+        <Button android:id="@+id/_BtnSubmit" android:layout_width="wrap_content" android:text="save setting" android:layout_height="wrap_content" android:layout_marginRight="10dip"></Button>
+        <Button android:id="@+id/_BtnCancel" android:text="Close" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginLeft="10dip"></Button>
+    </LinearLayout>
+</RelativeLayout>
