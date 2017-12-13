@@ -98,7 +98,7 @@ public class PickingDetailActivity extends AppCompatActivity {
 
                             Toast.makeText(PickingDetailActivity.this, "Process Picking Success!", Toast.LENGTH_LONG).show();
 
-                            // checking location scan
+                            // checking location scann
                             if (_ValueInfoLoc.compareTo(_input_scanlo.getText().toString()) == 0)
                                 _input_scanpid.requestFocus();
                             else {
