@@ -33,10 +33,11 @@ public class PickingDetailActivity extends AppCompatActivity {
     private static String NoOrderKey;
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
-    EditText _input_scanlo;
+    EditText _input_scanloc;
     EditText _input_scanpid;
 
-    TextView _input_inputqtypick;
+    EditText _input_inputqtypick;
+
     TextView _input_info_scanloc;
     TextView _input_info_qtypick;
     TextView _input_info_scanID;
@@ -44,16 +45,12 @@ public class PickingDetailActivity extends AppCompatActivity {
     TextView _input_info_batchno;
 
 
-    private static String _ValueScanLoc;
-    private static String _ValueScanPid;
-    private static String _ValueSkuPicking;
-    private static String _ValueInputQty;
 
-    private static String _ValueInfoLoc;
-    private static String _ValueInfoPID;
-    private static String _ValueInfoQty;
-    private static String _ValueInfoSKU;
-    private static String _ValueInfoBatchNo;
+    private static String _ValueInfoLoc="";
+    private static String _ValueInfoPID="";
+    private static String _ValueInfoQty="";
+    private static String _ValueInfoSKU="";
+    private static String _ValueInfoBatchNo="";
     private static String _Value_MessageID="";
     private static String _Value_Type="PIC";
     Button _InputSubmiPick;
@@ -70,6 +67,7 @@ public class PickingDetailActivity extends AppCompatActivity {
         // inisialisasi Event Listener
         _EventListener();
         // get parameter
+
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -96,20 +94,20 @@ public class PickingDetailActivity extends AppCompatActivity {
 
                         case R.id._input_scanloc:
 
-                            Toast.makeText(PickingDetailActivity.this, "Process Picking Success!", Toast.LENGTH_LONG).show();
+                           // Toast.makeText(PickingDetailActivity.this, "Process Picking Success!", Toast.LENGTH_LONG).show();
 
                             // checking location scannnnnnnn
-                            if (_ValueInfoLoc.compareTo(_input_scanlo.getText().toString()) == 0)
+                            if (_ValueInfoLoc.compareTo(_input_scanloc.getText().toString()) == 0)
                                 _input_scanpid.requestFocus();
                             else {
-                                _input_scanlo.setError("Location input not same!");
-                                _input_scanlo.setText("");
-                                _input_scanlo.requestFocus();
+                                _input_scanloc.setError("Location input not same!");
+                                _input_scanloc.setText("");
+                                _input_scanloc.requestFocus();
                             }
                             break;
                         case R.id._input_scanpid:
                             // checking location scanpid
-                            if (_ValueScanPid.compareTo(_input_scanpid.getText().toString()) == 0)
+                            if (_ValueInfoPID.compareTo(_input_scanpid.getText().toString()) == 0)
                                 _input_scanpid.requestFocus();
                             else {
                                 _input_scanpid.setError("PalletID input not same!");
@@ -119,8 +117,9 @@ public class PickingDetailActivity extends AppCompatActivity {
                             break;
                         case R.id._input_inputqtypick:
                             // checking qty
-                            if (_ValueInputQty.compareTo(_input_inputqtypick.getText().toString()) == 0) {
-                                _Url = _Url_fix + "/020/" + NoWavekey + "/" + NoOrderKey;
+                            if (_ValueInfoQty.compareTo(_input_inputqtypick.getText().toString()) == 0) {
+                                MessageIDCreate();
+                                _Url = _Url_fix + "/020/" + NoWavekey + "/" + NoOrderKey +"/" +_Value_MessageID + "/"+ _Value_Type  ;
                                 new PickingDetailActivity.GetPickDetail().execute("020");
                             } else {
                                 _input_inputqtypick.setError("Quantity input not same!");
@@ -137,7 +136,7 @@ public class PickingDetailActivity extends AppCompatActivity {
             }
         };
 
-        _input_scanlo.setOnKeyListener(KeyEnter);
+        _input_scanloc.setOnKeyListener(KeyEnter);
         _input_scanpid.setOnKeyListener(KeyEnter);
         _input_inputqtypick.setOnKeyListener(KeyEnter);
     }
@@ -148,7 +147,7 @@ public class PickingDetailActivity extends AppCompatActivity {
         _Url_fix=_appsetting._getAPISERVER();
 
         //Input Field
-        _input_scanlo= (EditText)findViewById(R.id._input_scanloc);
+        _input_scanloc= (EditText)findViewById(R.id._input_scanloc);
         _input_scanpid= (EditText)findViewById(R.id._input_scanpid);
         _input_inputqtypick= (EditText)findViewById(R.id._input_inputqtypick);
 
@@ -169,7 +168,7 @@ public class PickingDetailActivity extends AppCompatActivity {
 
     void BindData()
     {
-        _ValueInfoLoc=_input_scanlo.getText().toString();
+        _ValueInfoLoc=_input_scanloc.getText().toString();
 
 
     }

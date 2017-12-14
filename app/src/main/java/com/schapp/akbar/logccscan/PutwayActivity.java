@@ -147,8 +147,8 @@ public class PutwayActivity extends AppCompatActivity {
                     case R.id._BtnSubmitPutway:
                         MessageIDCreate();
                         BindVariable();
-                     //   _Url= _Url_fix + "/011/" +_Value_MessageID + "/" +  _ValuePalIdPutway + "/" + _ValueLocPutway + "/" + LoadLogin() +"/" +  _Value_Type;
-                        _Url=  "http://10.213.135.3/Service1.asmx/process001?MESSAGE_ID=" +_Value_MessageID + "&RLOT07=" +  _ValuePalIdPutway + " &RLOT08=" + _ValueLocPutway + "&RLOT15=akbar&TYPE=" +  _Value_Type;
+                        _Url= _Url_fix + "/011/" +_Value_MessageID + "/" +  _ValuePalIdPutway + "/" + _ValueLocPutway + "/" + LoadLogin() +"/" +  _Value_Type;
+                      //  _Url=  "http://10.213.135.3/Service1.asmx/process001?MESSAGE_ID=" +_Value_MessageID + "&RLOT07=" +  _ValuePalIdPutway + " &RLOT08=" + _ValueLocPutway + "&RLOT15=akbar&TYPE=" +  _Value_Type;
                         new PutwayActivity.Putway().execute("011");
                         break;
                     case R.id._BtnClearPutway:
