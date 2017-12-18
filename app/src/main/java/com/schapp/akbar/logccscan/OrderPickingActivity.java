@@ -118,7 +118,7 @@ public class OrderPickingActivity extends AppCompatActivity {
 
 
             //  open to  detil
-
+                    isCancelled();
                     Intent OPK=new Intent(OrderPickingActivity.this, PickingDetailActivity.class);
                     OPK.putExtra("wavekeysession",NoWavekey);
                     OPK.putExtra("orderkeysession",itemValue);

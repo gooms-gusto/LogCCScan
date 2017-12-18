@@ -109,7 +109,7 @@ listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
         // Show Alert
       //  Toast.makeText( PickingList.this, "Position :" + itemPosition + "  ListItem : " + itemValue, Toast.LENGTH_LONG).show();
-
+        isCancelled();
         Intent OPK=new Intent(PickingList.this, OrderPickingActivity.class);
         OPK.putExtra("wavekeysession",itemValue);
         startActivity(OPK);

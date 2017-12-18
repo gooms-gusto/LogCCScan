@@ -78,8 +78,6 @@ public class PickingDetailActivity extends AppCompatActivity {
             _Url= _Url_fix + "/019/" + NoWavekey +"/" + NoOrderKey;
             new PickingDetailActivity.GetPickDetail().execute("019");
 
-
-
         }
 
 
@@ -190,8 +188,6 @@ public class PickingDetailActivity extends AppCompatActivity {
     }
 
     public class GetPickDetail extends AsyncTask<String,Void,JSONObject> {
-
-
         protected  String _TagProcess="";
         ProgressDialog pd;
         @Override
@@ -229,7 +225,6 @@ public class PickingDetailActivity extends AppCompatActivity {
                 switch (_TagProcess) {
                     case "019":
 
-
                         if (s == null) {
 
                         } else {
@@ -248,13 +243,8 @@ public class PickingDetailActivity extends AppCompatActivity {
                         }
                         break;
                     case "020":
-
-
-                        Toast.makeText(PickingDetailActivity.this,"Process Picking Success!",Toast.LENGTH_LONG).show();
+                        Toast.makeText(PickingDetailActivity.this,_Value_MessageID,Toast.LENGTH_LONG).show();
                         break;
-
-
-
                 }
 
 
