@@ -1,6 +1,7 @@
 package com.schapp.akbar.logccscan;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -91,6 +92,24 @@ public class PickingDetailActivity extends AppCompatActivity {
                 if ((event.getAction() == KeyEvent.ACTION_DOWN) &&(keyCode == KeyEvent.KEYCODE_ENTER)) {
 
                     switch (v.getId()){
+                        case R.id._input_scanloc:
+                            if (_ValueInfoLoc.compareTo(_input_scanloc.getText().toString()) == 0)
+                                _input_scanpid.requestFocus();
+                            else {
+                                _input_scanloc.setError("Location input not same!");
+                                _input_scanloc.setText("");
+                                _input_scanloc.requestFocus();
+                            }
+                            break;
+                        case R.id._input_scanpid:
+                            if (_ValueInfoPID.compareTo(_input_scanpid.getText().toString()) == 0)
+                                _input_scanpid.requestFocus();
+                            else {
+                                _input_scanpid.setError("PalletID input not same!");
+                                _input_scanpid.setText("");
+                                _input_scanpid.requestFocus();
+                            }
+                            break;
                         case R.id._input_inputqtypick:
                             if (_ValueInfoQty.compareTo(_input_inputqtypick.getText().toString()) == 0) {
                                 MessageIDCreate();
@@ -109,66 +128,12 @@ public class PickingDetailActivity extends AppCompatActivity {
               }
             };
 
+        _input_scanloc.setOnKeyListener(key);
+        _input_scanpid.setOnKeyListener(key);
         _input_inputqtypick.setOnKeyListener(key);
     }
 
-    void _EventListener() {
-        View.OnKeyListener KeyEnter = new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    switch (v.getId()) {
 
-                        case R.id._input_scanloc:
-
-                           // Toast.makeText(PickingDetailActivity.this, "Process Picking Success!", Toast.LENGTH_LONG).show();
-
-                            // checking location scannnnnnnn
-                            if (_ValueInfoLoc.compareTo(_input_scanloc.getText().toString()) == 0)
-                                _input_scanpid.requestFocus();
-                            else {
-                                _input_scanloc.setError("Location input not same!");
-                                _input_scanloc.setText("");
-                                _input_scanloc.requestFocus();
-                            }
-                            break;
-                        case R.id._input_scanpid:
-                            // checking location scanpid
-                            if (_ValueInfoPID.compareTo(_input_scanpid.getText().toString()) == 0)
-                                _input_scanpid.requestFocus();
-                            else {
-                                _input_scanpid.setError("PalletID input not same!");
-                                _input_scanpid.setText("");
-                                _input_scanpid.requestFocus();
-                            }
-                            break;
-                        case R.id._input_inputqtypick:
-                            // checking qty
-                            if (_ValueInfoQty.compareTo(_input_inputqtypick.getText().toString()) == 0) {
-                                MessageIDCreate();
-                                _Url = _Url_fix + "/020/" + NoWavekey + "/" + NoOrderKey +"/" +_Value_MessageID + "/"+ _Value_Type  ;
-                                new PickingDetailActivity.GetPickDetail().execute("020");
-                            } else {
-                                _input_inputqtypick.setError("Quantity input not same!");
-                                _input_inputqtypick.setText("");
-                                _input_inputqtypick.requestFocus();
-                            }
-
-                            break;
-
-
-                    }
-
-                }
-
-                return false;
-            }
-        };
-
-        _input_scanloc.setOnKeyListener(KeyEnter);
-        _input_scanpid.setOnKeyListener(KeyEnter);
-        _input_inputqtypick.setOnKeyListener(KeyEnter);
-    }
 
     void BindSetting()
     {
@@ -274,7 +239,13 @@ public class PickingDetailActivity extends AppCompatActivity {
                         }
                         break;
                     case "020":
-                        Toast.makeText(PickingDetailActivity.this,_Value_MessageID,Toast.LENGTH_LONG).show();
+                        _input_scanloc.setText("");
+                        _input_scanpid.setText("");
+                        _input_inputqtypick.setText("");
+                        Toast.makeText(PickingDetailActivity.this,"Picking succesfully!",Toast.LENGTH_LONG).show();
+
+                        Intent _BackPage=new Intent(PickingDetailActivity.this, PickingList.class);
+                        startActivity(_BackPage);
                         break;
                 }
 
