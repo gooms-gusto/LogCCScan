@@ -65,11 +65,13 @@ public class PickingDetailActivity extends AppCompatActivity {
         BindSetting();
 
         // inisialisasi Event Listener
-        _EventListener();
+       // _EventListener();
         // get parameter
 
 
         Bundle extras = getIntent().getExtras();
+
+
         if (extras != null) {
             NoWavekey = extras.getString("wavekeysession");
             NoOrderKey=extras.getString("orderkeysession");
@@ -80,7 +82,34 @@ public class PickingDetailActivity extends AppCompatActivity {
 
         }
 
+        // key event
 
+        OnKeyListener  key=new OnKeyListener() {
+
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&(keyCode == KeyEvent.KEYCODE_ENTER)) {
+
+                    switch (v.getId()){
+                        case R.id._input_inputqtypick:
+                            if (_ValueInfoQty.compareTo(_input_inputqtypick.getText().toString()) == 0) {
+                                MessageIDCreate();
+                                _Url = _Url_fix + "/020/"+ _Value_MessageID+ "/" + NoWavekey + "/" + NoOrderKey  + "/"+ LoadLogin() +"/"+ _Value_Type  ;
+                                new PickingDetailActivity.GetPickDetail().execute("020");
+                            } else {
+                                _input_inputqtypick.setError("Quantity input not same!");
+                                _input_inputqtypick.setText("");
+                                _input_inputqtypick.requestFocus();
+                            }
+
+                            break;
+                    }
+                }
+                return false;
+              }
+            };
+
+        _input_inputqtypick.setOnKeyListener(key);
     }
 
     void _EventListener() {
@@ -126,6 +155,8 @@ public class PickingDetailActivity extends AppCompatActivity {
                             }
 
                             break;
+
+
                     }
 
                 }
