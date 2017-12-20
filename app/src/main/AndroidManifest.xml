@@ -48,7 +48,8 @@
         <activity android:name=".PickingList" />
         <activity android:name=".listview" />
         <activity android:name=".OrderPickingActivity" />
-        <activity android:name=".PickingDetailActivity"></activity>
+        <activity android:name=".PickingDetailActivity" />
+        <activity android:name=".wavelist"></activity>
     </application>
 
 </manifest>

@@ -60,7 +60,7 @@ public class MenuActivity extends AppCompatActivity {
                         startActivity(IPtw);
                         break;
                     case "Picking OBD":
-                        Intent IPck=new Intent(MenuActivity.this, PickingList.class);
+                        Intent IPck=new Intent(MenuActivity.this, wavelist.class);
                         startActivity(IPck);
                         break;
                     case "Logout":
