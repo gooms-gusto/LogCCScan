@@ -42,8 +42,7 @@ public class wavelist extends AppCompatActivity {
     ArrayList<HashMap<String, String>> mylist, mylist_title;
     ListAdapter adapter_title, adapter;
     HashMap<String, String> map1, map2;
-    String[] countrys = { "India", "Pakistan", "China", "Bangladesh","Afghanistan"  };
-    String[] capitals = { "New Delhi", "Islamabad", "Beijing", "Dhaka"," Kabul" };
+
 
 
 
@@ -105,13 +104,12 @@ public class wavelist extends AppCompatActivity {
                     list.add(json.getJSONObject(i).toString());
                 }
 
-                showActivity(_Num,_PickItem,_DN);
 
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
-            adapter = new ArrayAdapter<String>(wavelist.this,  R.layout.activity_listview, _PickItem);
+            adapter = new ArrayAdapter<String>(wavelist.this,  R.layout.activity_wavelist, _PickItem);
             listv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -122,12 +120,12 @@ public class wavelist extends AppCompatActivity {
                     String itemValue = (String) listView.getItemAtPosition(position);
 
                     // Show Alert
+
                     //  Toast.makeText( PickingList.this, "Position :" + itemPosition + "  ListItem : " + itemValue, Toast.LENGTH_LONG).show();
-                    isCancelled();
+
                     Intent OPK=new Intent(wavelist.this, OrderPickingActivity.class);
                     OPK.putExtra("wavekeysession",itemValue);
                     startActivity(OPK);
-
                 }
             });
 
@@ -148,11 +146,12 @@ public class wavelist extends AppCompatActivity {
             super.onPostExecute(s);
 
             switch (_TagProcess) {
-                case "018":
+                case "017":
                     if (s==null) {
 
                     } else {
-                      //  listView.setAdapter(adapter);
+                        showActivity(_Num,_PickItem);
+
                     }
                     break;
 
@@ -170,7 +169,7 @@ public class wavelist extends AppCompatActivity {
     }
 
 
-    public void showActivity(String[] Num,String[] Wave,String[] DN) {
+    public void showActivity(String[] Num,String[] Wave) {
 
         mylist = new ArrayList<HashMap<String, String>>();
         mylist_title = new ArrayList<HashMap<String, String>>();
@@ -190,9 +189,10 @@ public class wavelist extends AppCompatActivity {
         try {
             adapter_title = new SimpleAdapter(this, mylist_title, R.layout.row,
                     new String[] { "slno", "one"}, new int[] {
-                    R.id.Slno, R.id.one, R.id.two });
+                    R.id.Slno, R.id.one });
             list_head.setAdapter(adapter_title);
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
 
         }
 
