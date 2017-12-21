@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -117,7 +118,7 @@ public class wavelist extends AppCompatActivity {
                     int itemPosition = position;
 
                     // ListView Clicked item value
-                    String itemValue = (String) listView.getItemAtPosition(position);
+                    String itemValue =((TextView)view.findViewById(R.id.one)).getText().toString(); // (String) listView.getItemAtPosition(position);
 
                     // Show Alert
 
