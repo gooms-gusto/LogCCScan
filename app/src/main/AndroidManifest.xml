@@ -49,7 +49,8 @@
         <activity android:name=".listview" />
         <activity android:name=".OrderPickingActivity" />
         <activity android:name=".PickingDetailActivity" />
-        <activity android:name=".wavelist"></activity>
+        <activity android:name=".wavelist" />
+        <activity android:name=".waveorderlist"></activity>
     </application>
 
 </manifest>
