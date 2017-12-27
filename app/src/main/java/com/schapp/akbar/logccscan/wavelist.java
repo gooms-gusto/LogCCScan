@@ -124,7 +124,7 @@ public class wavelist extends AppCompatActivity {
 
                     //  Toast.makeText( PickingList.this, "Position :" + itemPosition + "  ListItem : " + itemValue, Toast.LENGTH_LONG).show();
 
-                    Intent OPK=new Intent(wavelist.this, OrderPickingActivity.class);
+                    Intent OPK=new Intent(wavelist.this, waveorderlist.class);
                     OPK.putExtra("wavekeysession",itemValue);
                     startActivity(OPK);
                 }
